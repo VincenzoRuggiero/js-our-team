@@ -45,12 +45,19 @@ for (let i = 0; i < team.length; i++) {
 //Card con immagine
 
 for (let i = 0; i < team.length; i++) {
+  //Associo una variabile alle immagini
   let objImg = team[i].profilePic;
+
+  //Creo la card e il suo tag immagine + aggiunta classi
   let cardItem = document.createElement("div");
   cardItem.classList.add("card");
   let imgItem = document.createElement("img");
   imgItem.classList.add("photo");
+
+  //Collego i nuovi elementi al parent contenitore
   cardsContainerElem.append(cardItem);
   cardItem.append(imgItem);
-  imgItem.innerHTML = `<img src="img/${objImg}">`;
+
+  //Collego l'immagine nell'Oggetto al DOM
+  imgItem.innerHTML = `<img src="../img/${objImg}">`;
 }
