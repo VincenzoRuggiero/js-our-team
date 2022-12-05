@@ -1,7 +1,9 @@
+const boxElem = document.querySelector(".box");
+
 const team = [
   {
     name: "Wayne Barnett",
-    role: "Founder &amp: CEO",
+    role: "Founder &amp; CEO",
     profilePic: "wayne-barnett-founder-ceo.jpg",
   },
   {
@@ -33,4 +35,7 @@ const team = [
 
 for (let i = 0; i < team.length; i++) {
   console.log(team[i]);
+  let pElem = document.createElement("p");
+  pElem.innerHTML = `${team[i].name} - ${team[i].role} -  ${team[i].profilePic} `;
+  boxElem.appendChild(pElem);
 }
