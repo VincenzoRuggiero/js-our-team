@@ -1,4 +1,5 @@
 const boxElem = document.querySelector(".box");
+const cardsContainerElem = document.querySelector(".cards-container");
 
 const team = [
   {
@@ -33,9 +34,23 @@ const team = [
   },
 ];
 
+//Solo testo
 for (let i = 0; i < team.length; i++) {
   console.log(team[i]);
   let pElem = document.createElement("p");
   pElem.innerHTML = `${team[i].name} - ${team[i].role} -  ${team[i].profilePic} `;
   boxElem.appendChild(pElem);
+}
+
+//Card con immagine
+
+for (let i = 0; i < team.length; i++) {
+  let objImg = team[i].profilePic;
+  let cardItem = document.createElement("div");
+  cardItem.classList.add("card");
+  let imgItem = document.createElement("img");
+  imgItem.classList.add("photo");
+  cardsContainerElem.append(cardItem);
+  cardItem.append(imgItem);
+  imgItem.innerHTML = `<img src="img/${objImg}">`;
 }
